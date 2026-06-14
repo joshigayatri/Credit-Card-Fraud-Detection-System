@@ -3,9 +3,13 @@ import pandas as pd
 import pickle
 import numpy as np
 
-model = pickle.load(
-    open("models/fraud_model.pkl", "rb")
-)
+import os
+import pickle
+
+model_path = os.path.join("models", "fraud_model.pkl")
+
+with open(model_path, "rb") as file:
+    model = pickle.load(file)
 # --------------------------------------------------
 # PAGE CONFIG
 # --------------------------------------------------
